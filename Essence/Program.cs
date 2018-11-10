@@ -62,6 +62,7 @@ namespace Essence
       BotSettings.Token = settings.Token;
       BotSettings.Playing = settings.Playing;
       BotSettings.Prefix = settings.Prefix;
+      BotSettings.DeleteDelay = settings.DeleteDelay;
       
       //––––––––––[ Register Commands ]––––––––––\\
 
@@ -79,6 +80,7 @@ namespace Essence
     private async Task Client_Log(LogMessage arg)
     {
       Console.WriteLine($"[{DateTime.Now} at {arg.Source}] {arg.Message}");
+      return;
     }
     
     private async Task Client_Ready()
