@@ -66,7 +66,7 @@ namespace Essence
       //––––––––––[ Register Commands ]––––––––––\\
 
       await RegisterCommandsAsync();
-      await _client.LoginAsync(TokenType.Bot, /*"NTEwNjIzMTkwOTYwMTc3MTg0.DsfQLg.VlW7qW7g4dpladQUcP-X6WnD3N4"*/ BotSettings.Token);
+      await _client.LoginAsync(TokenType.Bot, BotSettings.Token);
       await _client.StartAsync();
       await Task.Delay(-1);
 
