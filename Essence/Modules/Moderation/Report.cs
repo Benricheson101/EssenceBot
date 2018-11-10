@@ -71,9 +71,7 @@ namespace Essence.Modules.Moderation
       
       Thread.Sleep(10000);
 
-      await msg.DeleteAsync();
-      
-      EmbedBuilder ebb = new EmbedBuilder();
+      await msg.DeleteAsync();      
     }
   }
 }
