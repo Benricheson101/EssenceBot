@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Discord.Commands;
 using Imgur.API;
@@ -13,7 +14,14 @@ namespace Essence.Modules.Fun
     [Command()]
     public async Task MemeCommand()
     {
-      try
+      var msg = await ReplyAsync("This command is still being worked on.");
+      
+      await Context.Message.DeleteAsync();
+      
+      Thread.Sleep(5000);
+      await msg.DeleteAsync();
+      
+      /*try
       {
         var client = new ImgurClient("c93703697060d5c", "bc304e18172594158d79b5f79dd20f8e09d600f5");
         var endpoint = new ImageEndpoint(client);
@@ -24,8 +32,7 @@ namespace Essence.Modules.Fun
       {
         Console.WriteLine("An error occurred getting an image from Imgur.");
         Console.WriteLine(imgurEx.Message);
-      }
-
+      }*/
     }
   }
 }

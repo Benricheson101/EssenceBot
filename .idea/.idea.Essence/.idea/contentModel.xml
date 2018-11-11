@@ -15,6 +15,7 @@
           </e>
           <e p="Moderation" t="Include">
             <e p="Report.cs" t="Include" />
+            <e p="UserInfo.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -32,6 +33,7 @@
           <e p="Settings" t="Include">
             <e p="BotSettings.cs" t="Include" />
             <e p="settings.json" t="Include" />
+            <e p="TODO.txt" t="Include" />
           </e>
         </e>
       </e>

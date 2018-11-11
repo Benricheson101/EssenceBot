@@ -34,8 +34,8 @@ namespace Essence.Modules.Moderation
     [Command("bug")]
     public async Task ReportBug([Remainder] string proof)
     {
-      var eb = new EmbedBuilder();
-      eb.WithAuthor(Context.User.Username, Context.User.GetAvatarUrl())
+      var eb = new EmbedBuilder()
+              .WithAuthor(Context.User.Username, Context.User.GetAvatarUrl())
         .WithTitle($"{Context.User.Username} filed a bug report!")
         .AddField("Report:", proof)
         .WithFooter($"Sent from #{Context.Channel.Name} in {Context.Guild.Name}")
@@ -61,12 +61,9 @@ namespace Essence.Modules.Moderation
         .WithDescription($"Correct usage: \n`{BotSettings.Prefix}report user <user tag> <proof>`")
         .WithTimestamp(DateTimeOffset.Now)
         .WithColor(Color.Orange);
-
       
       if (user == null) throw new ArgumentNullException(nameof(user));
-      {
         await ReplyAsync($"", embed: errorEb.Build());
-      }
      
       var eb = new EmbedBuilder()
         .WithAuthor(Context.User.Username, Context.User.GetAvatarUrl())
