@@ -10,6 +10,9 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Essence.csproj" t="IncludeRecursive" />
         <e p="Modules" t="Include">
+          <e p="Fun" t="Include">
+            <e p="Meme.cs" t="Include" />
+          </e>
           <e p="Moderation" t="Include">
             <e p="Report.cs" t="Include" />
           </e>

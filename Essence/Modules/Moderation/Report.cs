@@ -55,10 +55,22 @@ namespace Essence.Modules.Moderation
     [Command("user")]
     public async Task ReportUser(IUser user, [Remainder] string proof)
     {
+      var errorEb = new EmbedBuilder()
+        .WithTitle($"Incorrect usage")
+        .WithAuthor(Context.User.Username, Context.User.GetAvatarUrl())
+        .WithDescription($"Correct usage: \n`{BotSettings.Prefix}report user <user tag> <proof>`")
+        .WithTimestamp(DateTimeOffset.Now)
+        .WithColor(Color.Orange);
+
       
-      var eb = new EmbedBuilder();
-      eb.WithAuthor(Context.User.Username, Context.User.GetAvatarUrl())
-        .WithTitle($"{Context.User.Username} filed a bug report!")
+      if (user == null) throw new ArgumentNullException(nameof(user));
+      {
+        await ReplyAsync($"", embed: errorEb.Build());
+      }
+     
+      var eb = new EmbedBuilder()
+        .WithAuthor(Context.User.Username, Context.User.GetAvatarUrl())
+        .WithTitle($"{Context.User.Username} filed a report against {user.Mention}!")
         .AddField("Report:", proof)
         .WithFooter($"Sent from #{Context.Channel.Name} in {Context.Guild.Name}")
         .WithTimestamp(DateTimeOffset.Now)

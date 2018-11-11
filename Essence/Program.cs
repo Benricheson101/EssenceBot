@@ -114,5 +114,9 @@ namespace Essence
           Console.WriteLine($"[{DateTime.Now} at {arg.Source}] {result.ErrorReason}");
       }
     }
+    
+    //––––––––––[ Giphy ]––––––––––\\
+    
+
   }
 }
