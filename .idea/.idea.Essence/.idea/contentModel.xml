@@ -15,6 +15,7 @@
           </e>
           <e p="Moderation" t="Include">
             <e p="Info.cs" t="Include" />
+            <e p="Kick.cs" t="Include" />
             <e p="Report.cs" t="Include" />
           </e>
         </e>
